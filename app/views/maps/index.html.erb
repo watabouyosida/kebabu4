@@ -1,0 +1,51 @@
+
+<div class="main">
+  <div class="main__side"></div>
+  <div class="main__map", id="map">
+  <script>
+      function initMap() {
+
+        var latlng = new google.maps.LatLng(35.688186,139.7435831);
+        var styles = [
+           {
+            stylers: [
+             { "saturation": 0 },
+             { "lightness": 0 }
+            ]
+           }
+          ];
+        
+        var map = new google.maps.Map(document.getElementById('map'),{
+          zoom: 13,
+          styles: styles,
+          center: latlng
+        });
+        var transitLayer = new google.maps.TransitLayer();
+        transitLayer.setMap(map);
+        
+        <% @places.each do |place| %>
+        (function(){
+          var contentString = "<%= place.name %>";
+          var infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+
+          var marker = new google.maps.Marker({
+            position:{lat: <%= place.latitude %>, lng: <%= place.longitude %>},
+            map: map,
+            title: contentString
+          });
+
+          marker.addListener('click', function(){
+            infowindow.open(map, marker)
+          });
+        })();
+        <% end %>
+      }
+  </script>
+  </div>
+</div>
+<footer></footer>
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBvf0vzr9bo7k50zErqUl0M44uu7jD-bmI&callback=initMap">
+ </script>
