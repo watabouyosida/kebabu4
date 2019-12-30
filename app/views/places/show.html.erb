@@ -4,6 +4,15 @@
   </div>
   <div class="main">
     <div class="main__left", id="image"></div>
-    <div class="main__right", id="menu"></div>
+    
+    <table class="main__right">
+    <% @menus.each do |menu|%>
+      <tr>
+      <th class="main__right--name"><%= menu.name %></th>
+      <td><%= menu.price %>円</td>
+      </tr>
+    <% end %>
+    </table>
+   
   </div>
 </div>
