@@ -1,6 +1,13 @@
 
 <div class="main">
-  <div class="main__side"></div>
+  <div class="main__side">
+    <div class="main__lside--title">店舗一覧</div>
+  <% @places.each do |place| %>
+    <div class="main__side--name">
+      <%= link_to"#{place.name}", place_path(place.id) %>
+    </div>
+  <% end %>
+  </div>
   <div class="main__map", id="map">
   <script>
       function initMap() {

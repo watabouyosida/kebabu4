@@ -10,15 +10,15 @@
 
   <body>
     <header>
-      <h1 class="title">東京ケバブマップ</h1>
+      <h1 class="title">
+        <%= link_to "東京ケバブマップ", root_path, class: "header__title--text"%>
+      </h1>
       <% if user_signed_in? %>
         <div class="header__link">
           <span>
             <ul class="user_info">
               <li>
-                <%= link_to "マイページ", "/users/#{current_user.id}" %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                <%= link_to  "投稿する", "/tweets/new", class: "post" %>
               </li>
             </ul>
           </span>
