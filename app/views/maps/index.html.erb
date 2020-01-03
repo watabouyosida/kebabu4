@@ -32,7 +32,8 @@
         
         <% @places.each do |place| %>
         (function(){
-          var contentString = "<%= place.name %>";
+          var contentString = `<%= place.name %>
+                                <%= link_to '詳細', place_path(place.id) %>`;
           var infowindow = new google.maps.InfoWindow({
             content: contentString
           });
