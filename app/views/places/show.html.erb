@@ -2,17 +2,28 @@
   <div class="name">
     <%= @place.name %>
   </div>
-  <div class="main">
-    <div class="main__left", id="image"></div>
-    
-    <table class="main__right">
-    <% @menus.each do |menu|%>
-      <tr>
-      <th class="main__right--name"><%= menu.name %></th>
-      <td><%= menu.price %>円</td>
-      </tr>
-    <% end %>
-    </table>
-   
-  </div>
+  <main class="main">
+    <div class="main__left", id="image">
+      <div class="main__left--bigimg", id="bigimg">
+        <%= image_tag @images[0].source,  size: "200x200" %>
+      </div>
+      <ul class="main__left__list">
+        <% @images.each do |image| %>
+          <li class="main__left__list--image"><%= image_tag image.source %></li>
+        <% end %>
+      <ul>
+    </div>
+  
+    <div class="main__right">
+      <h1 class="main__right__menu">メニュー</h1>
+      <table class="main__right__table">
+      <% @menus.each do |menu|%>
+        <tr>
+        <th class="main__right__table--name"><%= menu.name %></th>
+        <td><%= menu.price %>円</td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+  </main>
 </div>
