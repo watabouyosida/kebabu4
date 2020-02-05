@@ -3,7 +3,7 @@
 lock '3.11.2'
 
 # Capistranoのログの表示に利用する
-set :application, '<kebabu4>'
+set :application, '<kebabu3>'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:watabouyosida/kebabu4.git'
