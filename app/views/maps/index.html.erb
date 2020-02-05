@@ -1,12 +1,7 @@
 
 <div class="main">
   <div class="main__side">
-    <div class="main__lside--title">店舗一覧</div>
-  <% @places.each do |place| %>
-    <div class="main__side--name">
-      <%= link_to"#{place.name}", place_path(place.id) %>
-    </div>
-  <% end %>
+
   </div>
   <div class="main__map", id="map">
   <script>
@@ -32,7 +27,8 @@
         
         <% @places.each do |place| %>
         (function(){
-          var contentString = "<%= place.name %>";
+          var contentString = `<%= place.name %>
+                                 <%= link_to "詳細", place_path(place.id) %>`;
           var infowindow = new google.maps.InfoWindow({
             content: contentString
           });

@@ -53,6 +53,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'rails_admin', '~> 2.0.0.beta'
+
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem 'carrierwave'
+gem 'mini_magick'
+
