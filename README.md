@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### アプリケーションの概要
+東京にあるケバブ店の位置を、googlemap上に反映させました。
+アイコンをクリックすると各店舗の情報を閲覧できる機能が実装されています。
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### ログイン時のアドレスとパスワード
+address aaa@w
+pass wwwwww
