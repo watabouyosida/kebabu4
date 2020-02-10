@@ -28,8 +28,13 @@ header{
 .main{
   height: calc(100vh - 200px);
   width: 100%;
+  display: flex;
+  &__side{
+    width: 200px;
+    background-color: #1aaedb;
+  }
   &__map{
-    width: 100vw;
+    width: calc(100vw - 200px);
   }
 }
 footer{
