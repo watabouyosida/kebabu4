@@ -26,11 +26,12 @@ header{
 }
 
 .main{
-  height: calc(100vh - 200px);
+  
   width: 100%;
  
   &__map{
     width: 100vw;
+    height: calc(100vh - 200px);
   }
 }
 footer{
